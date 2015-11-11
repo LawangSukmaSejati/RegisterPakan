@@ -123,7 +123,7 @@ function save(){
 					$("#loading").show(); 
 				},
 				success:function(data){
-					$.pnotify({
+					new PNotify({
 						title: 'Menu Created',
 						text: 'Menu Created',
 						animation: {
@@ -131,6 +131,7 @@ function save(){
 							effect_out: 'slide'
 						},
 						type : "success",
+						styling: 'bootstrap3'
 					});
 						
 					setInterval(function() {

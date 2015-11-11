@@ -43,7 +43,7 @@
 
 		//if($this->uri->segment(1) != null):?>
 		jQuery(document).ready(function() {		
-			App.setPage("fixed_header_sidebar");  //Set current page			
+			App.setPage("fixed_header_sidebar");  //Set current page						
 			App.init(); //Initialise plugins and elements
 		});
 		<?php //endif;?>

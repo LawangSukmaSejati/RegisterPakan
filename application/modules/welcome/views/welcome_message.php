@@ -13,7 +13,7 @@
             <div class="modal-content">
                 <form class="form-horizontal" method="post" id="login">
                     <div class="modal-header">
-                        <h3 class="modal-title">Welcome to KKP System</h3>
+                        <h3 class="modal-title">Pakan Registration System</h3>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">

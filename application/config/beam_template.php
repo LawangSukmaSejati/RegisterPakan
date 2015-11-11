@@ -38,7 +38,7 @@ $config['beam_template']['assets_path'] = array(
 /**
  * Default Site Title
  */
-$config['beam_template']['base_title'] = 'KKP';
+$config['beam_template']['base_title'] = 'Puskesmas';
 
 /**
  * Title Separator 
@@ -71,6 +71,7 @@ $config['beam_template']['css'] = array(
 		'js/select2/select2.min',
 		'css/jquery.pnotify.default',
 		'js/bootstrap3-editable/css/bootstrap-editable',
+		'js/tokenfield/dist/css/bootstrap-tokenfield',
 	),
 	'frontend' =>array(
 		'css/bootstrap',
@@ -94,6 +95,7 @@ $config['beam_template']['js_header'] = array(
 		'js/jquery/jquery-2.0.3.min',		
 		'js/jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.min',
 		'bootstrap-dist/js/bootstrap.min',
+		'bootstrap-dist/js/bootstrap-button',
 		'js/bootstrap-daterangepicker/moment.min',
 		'js/bootstrap-daterangepicker/daterangepicker.min',
 		'js/jQuery-slimScroll-1.3.0/jquery.slimscroll.min',
@@ -106,6 +108,7 @@ $config['beam_template']['js_header'] = array(
 		'js/jquery.pnotify',
 		'js/select2/select2.min',
 		'js/bootstrap3-editable/js/bootstrap-editable',
+		'js/tokenfield/dist/bootstrap-tokenfield',
 		'js/script',
 	),
 	'frontend'=>array(

@@ -12,7 +12,7 @@ class Admin_Controller extends MY_Controller
 	public function __construct()
 	{
 		parent::__construct();        
-		if (!$this->auth->loggedin())
+		if (!$this->auth->loggedin()) 
 			redirect('authorize');
 	}
 }

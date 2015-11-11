@@ -112,6 +112,7 @@ class MY_Controller extends CI_Controller
 		if (!$allowed) show_error(lang('error_401'), 401, lang('error_401_title'));
 		
 		// Set redirect 
+		
 		$this->data['redirect'] = urldecode($this->input->get_post('redirect'));
 		
 	}

@@ -6,7 +6,7 @@
                                     
                                     <!-- /STYLER -->
                                     <!-- BREADCRUMBS -->
-                                    <ul class="breadcrumb">
+                                    <!--ul class="breadcrumb">
                                         <li>
                                             <i class="fa fa-home"></i>
                                             <a href="index.html">Home</a>
@@ -15,12 +15,12 @@
                                             <a href="#">Layouts</a>
                                         </li>
                                         <li>Fixed Header & Sidebar</li>
-                                    </ul>
+                                    </ul-->
                                     <!-- /BREADCRUMBS -->
                                     <div class="clearfix">
-                                        <h3 class="content-title pull-left">Fixed Header & Sidebar</h3>
+                                        <h3 class="content-title pull-left">Pakan Registration System</h3>
                                     </div>
-                                    <div class="description">Fixed Header & Sidebar Layout</div>
+                                    <div class="description">Use Simple For Human</div>
                                 </div>
                             </div>
                         </div>

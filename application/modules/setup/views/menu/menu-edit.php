@@ -111,7 +111,7 @@ function edit(){
 					$("#loading").show(); 
 				},
 				success:function(data){
-					$.pnotify({
+					new PNotify({
 						title: 'Menu Success Edited',
 						text: 'Menu Success Edited',
 						animation: {
@@ -119,6 +119,7 @@ function edit(){
 							effect_out: 'slide'
 						},
 						type : "success",
+						styling: 'bootstrap3'
 					});
 					setInterval(function() {
 						window.location = "../";

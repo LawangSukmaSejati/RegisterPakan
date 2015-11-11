@@ -17,7 +17,7 @@
             <!-- /SEARCH BAR -->
             <!-- SIDEBAR MENU -->
             <ul>
-                <li>
+                <li class="active">
                     <a href="<?php echo site_url();?>">
                         <i class="fa fa-tachometer fa-fw"></i> <span class="menu-text">Dashboard</span>
                         <span class="selected"></span>
