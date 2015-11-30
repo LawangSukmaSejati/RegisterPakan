@@ -28,11 +28,12 @@ class Execute extends My_Controller
 			$post_put[$key] =$value;
 		}
 		
-		$this->mgeneral->save($post_put,$db_name);
+		$id = $this->mgeneral->save($post_put,$db_name);
 		
 		$this->result['uid'] 	 = uniqid();
 		$this->result['code'] 	 = 0;
 		$this->result['message'] = "Save Success";
+		$this->result['idx']     = $id;
 		echo json_encode($this->result);
 	}
 	

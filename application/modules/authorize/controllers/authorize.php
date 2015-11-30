@@ -9,7 +9,16 @@
  */
 class Authorize extends MY_Controller 
 {
-	function index()
+	function __construct()
+    {
+        parent::__construct();
+        //$this->load->model('mgeneral');
+        //$this->load->helper('rand_string');
+        $this->ci =& get_instance();
+        $this->ci->load->library('PasswordHash', array('iteration_count_log2' => 8, 'portable_hashes' => FALSE));
+        
+    }
+    function index()
 	{        
 		// user is already logged in
         if ($this->auth->loggedin()) 
@@ -31,6 +40,7 @@ class Authorize extends MY_Controller
                     $user = $this->user_model->get_by_username($this->input->post('username'));
                     if ($user && $this->user_model->check_password($this->input->post('password'), $user->password))
                     {
+                        if($user->status == 1){
                         // mark user as logged in
                         $this->auth->login($user->id, $remember);
                         
@@ -42,6 +52,9 @@ class Authorize extends MY_Controller
                         ));
                         
                         redirect($this->config->item('dashboard_uri'));
+                        }else{
+                            $this->template->add_message('danger', "Akun Anda belum aktif");    
+                        }
                     }
                     else{
                         $this->template->add_message('danger', lang('login_attempt_failed'));
@@ -57,6 +70,7 @@ class Authorize extends MY_Controller
 
                 break;
             case 'register':
+
                 break;
             case 'forgot':
                 break;
@@ -90,18 +104,24 @@ class Authorize extends MY_Controller
             $user = $this->user_model->get_by_username($this->input->post('username'));
             if ($user && $this->user_model->check_password($this->input->post('password'), $user->password))
             {
-                // mark user as logged in
-                $this->auth->login($user->id, $remember);
-                
-                // Add session data
-                $this->session->set_userdata(array(
-                    'lang'      => $user->lang,
-                    'role_id'   => $user->role_id,
-                    'role_name' => $user->role_name
-                ));
-                $result['rescode'] = 0;
-                $result['message'] = "Login Success";
-                //redirect($this->config->item('dashboard_uri'));
+                if($user->status == 1){
+                    // mark user as logged in
+                    $this->auth->login($user->id, $remember);
+                    
+                    // Add session data
+                    $this->session->set_userdata(array(
+                        'lang'      => $user->lang,
+                        'role_id'   => $user->role_id,
+                        'role_name' => $user->role_name
+                    ));
+                    $result['rescode'] = 0;
+                    $result['message'] = "Login Success";
+                    //redirect($this->config->item('dashboard_uri'));
+                }else{
+                    $result['rescode'] = 2;
+                    $result['message'] = "Akun Anda Belum aktif";
+                }
+               
             }
             else{
                 //$this->template->add_message ('danger', lang('login_attempt_failed'));
@@ -115,6 +135,41 @@ class Authorize extends MY_Controller
         if ($this->input->post('remember'))
             $this->data['remember'] = $this->input->post('remember');
         echo json_encode($result);
+    }
+    public function register_ajax(){
+        if(!$this->input->is_ajax_request()) show_404('pages' ,900 );
+        $result =  array();
+        
+        if ($this->auth->loggedin()) 
+        {
+            redirect($this->config->item('dashboard_uri'));
+        }
+        /* Inisiet*/
+        $date       = date('Y-m-d');
+        $fullname      = $this->input->post('reg_fullname');
+        $username      = $this->input->post('reg_username');
+        $email         = $this->input->post('reg_email');
+        $password      = $this->input->post('reg_password');                      
+        $HashPassword  = $this->ci->passwordhash->HashPassword($password);
+        $registered    = $date;
+        $role          = 5;
+        $status        = 0;
+        $data =  array(
+            'first_name'=>$fullname,
+            'username'=>$username,
+            'email'=>$email,
+            'password'=>$HashPassword,
+            'registered'=>$registered,
+            'role_id'=>$role,
+            'status'=>$status,
+        );
+        if($post = $this->mgeneral->save($data,'auth_users')){
+
+            $result['code'] = 0;
+            $result['info'] = "Registrasi Berhasil";
+        }
+        echo json_encode($result);
+            
     }
 }
 

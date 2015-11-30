@@ -38,7 +38,7 @@ $config['beam_template']['assets_path'] = array(
 /**
  * Default Site Title
  */
-$config['beam_template']['base_title'] = 'Puskesmas';
+$config['beam_template']['base_title'] = 'KKP';
 
 /**
  * Title Separator 
@@ -63,6 +63,7 @@ $config['beam_template']['css'] = array(
 		'css/themes/default',	
 		'css/responsive',	
 		'font-awesome/css/font-awesome.min',
+		'js/jquery-ui-1.10.3.custom/css/custom-theme/jquery-ui-1.10.3.custom.min',
 		'css/css-google-font',
 		'js/bootstrap-daterangepicker/daterangepicker-bs3',
 		'js/uniform/css/uniform.default.min',	
@@ -72,6 +73,9 @@ $config['beam_template']['css'] = array(
 		'css/jquery.pnotify.default',
 		'js/bootstrap3-editable/css/bootstrap-editable',
 		'js/tokenfield/dist/css/bootstrap-tokenfield',
+		'js/datepicker/themes/default.min',
+		'js/datepicker/themes/default.date.min',
+		'js/dropzone/dropzone.min',
 	),
 	'frontend' =>array(
 		'css/bootstrap',
@@ -96,6 +100,8 @@ $config['beam_template']['js_header'] = array(
 		'js/jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.min',
 		'bootstrap-dist/js/bootstrap.min',
 		'bootstrap-dist/js/bootstrap-button',
+        'js/jQuery-BlockUI/jquery.blockUI.min',
+        'js/bootbox/bootbox.min',
 		'js/bootstrap-daterangepicker/moment.min',
 		'js/bootstrap-daterangepicker/daterangepicker.min',
 		'js/jQuery-slimScroll-1.3.0/jquery.slimscroll.min',
@@ -108,7 +114,11 @@ $config['beam_template']['js_header'] = array(
 		'js/jquery.pnotify',
 		'js/select2/select2.min',
 		'js/bootstrap3-editable/js/bootstrap-editable',
+		'js/datepicker/picker',
+		'js/datepicker/picker.date',
+		'js/datepicker/picker.time',
 		'js/tokenfield/dist/bootstrap-tokenfield',
+		'js/dropzone/dropzone.min',
 		'js/script',
 	),
 	'frontend'=>array(

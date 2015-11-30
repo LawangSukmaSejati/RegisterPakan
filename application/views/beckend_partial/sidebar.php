@@ -32,13 +32,13 @@
                         }else{
                         
 
-                            echo '<li class="has-sub">
+                            echo '<li class="has-sub active">
                                     <a href="javascript:;" class="">
                                     <i class="fa '.$value->icon.'"></i> <span class="menu-text">'.$value->label.'</span>
                                     <span class="arrow"></span>
                                     </a>';
                             $menu_parent        = $this->db->query("select m.id,m.parent_id,m.label,m.icon,r.name as link from tr_menu m left join acl_resources r on r.id=m.resource_id where m.active='0' and m.parent_id='".$value->id."'")->result();                                                                                
-                            echo '<ul class="sub">';
+                            echo '<ul class="sub open">';
                             foreach ($menu_parent as $keymp => $mp) {
                                 //if (!$this->acl->is_allowed($mp->link)) continue;
                                 $count_menu_parent  = $this->db->query("select count(*) as idx from tr_menu where active='0' and parent_id='".$mp->id."'")->row();                                                                                       
@@ -46,7 +46,7 @@
                                     echo '<li><a class="" href="'.site_url($mp->link).'"><span class="sub-menu-text">'.$mp->label.'</span></a></li>';
                                 }else{
                                     echo '
-                                        <li class="has-sub-sub">
+                                        <li class="has-sub-sub open">
                                             <a href="javascript:;" class=""><span class="sub-menu-text">'.$mp->label.'</span>
                                             <span class="arrow"></span>
                                             </a>

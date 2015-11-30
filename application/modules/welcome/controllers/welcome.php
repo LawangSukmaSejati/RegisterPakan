@@ -71,7 +71,7 @@ class Welcome extends MY_Controller
         }else{
         	//$this->data['posted'] =  $this->blog->getAll();
         	$this->template->load_module_partial('sidebar', 'welcome/hmvc/sidebar_partial')
-			->build('welcome_message');	
+			->build('front');	
 
         }
 		

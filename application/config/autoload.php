@@ -64,7 +64,7 @@ $autoload['libraries'] = array('database', 'session', 'auth', 'Beam/Template', '
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url', 'language', 'template','serialize');
+$autoload['helper'] = array('url', 'language', 'template','serialize','file');
 
 
 /*

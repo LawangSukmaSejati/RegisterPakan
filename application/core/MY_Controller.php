@@ -107,9 +107,13 @@ class MY_Controller extends CI_Controller
 		$this->load->language('application');
 		
 		// Check ACL
-		$this->acl->build();
+		/*$this->acl->build();
 		$allowed = $this->acl->is_allowed($this->uri->uri_string());
-		if (!$allowed) show_error(lang('error_401'), 401, lang('error_401_title'));
+		if (!$allowed){
+            header("Refresh:3;url=".base_url());
+            show_error(lang('error_401'), 401, lang('error_401_title'));
+            
+        }*/
 		
 		// Set redirect 
 		
